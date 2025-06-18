@@ -2,46 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Photography - Rec</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Videography - Rec</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header>
-    <div class="logo">
-  <img src="logo.png" alt="Logo" />
-    </div>
-    <nav id="navbar" class="nav-links">
+  <div class="logo">
+    <img src="logo.png" alt="Logo" />
+  </div>
+  
+  <nav id="navbar" class="nav-links">
     <a href="#" class="active">VIDEOGRAPHY</a>
     <a href="photography.html">PHOTOGRAPHY</a>
     <a href="graphic-design.html">GRAPHIC DESIGN</a>
     <a href="about.html">ABOUT</a>
   </nav>
 
-  <div class="burger" id="burger">
+  <div class="burger" id="burger" aria-label="Toggle menu" role="button" tabindex="0">
     <div></div>
     <div></div>
     <div></div>
   </div>
-  </header>
+</header>
+<main>
+  <h1>Videography</h1>
 
-  <h1>Photography</h1>
+<div class="gallery">
 
-  <div class="gallery">
-    <!-- Здесь размести фото для этого раздела -->
-    <img src="photo1.jpg" alt="Photo 1">
-    <img src="photo2.jpg" alt="Photo 2">
-    <!-- и так далее -->
+  <!-- Горизонтальные фото -->
+  <div class="row horizontal-row">
+    <img class="horizontal" src="path/to/photo1.jpg" alt="Photo 1" />
+    <img class="horizontal" src="path/to/photo2.jpg" alt="Photo 2" />
   </div>
 
-  <script>
-  const burger = document.getElementById('burger');
-  const navbar = document.getElementById('navbar');
+  <!-- Группа вертикальных фото 1 -->
+  <div class="row vertical-row">
+    <img class="vertical" src="images/photo1.jpg" alt="Photo 1" />
+    <img class="vertical" src="images/photo2.jpg" alt="Photo 2" />
+    <img class="vertical" src="images/photo3.jpg" alt="Photo 3" />
+  </div>
 
-  burger.addEventListener('click', () => {
-    navbar.classList.toggle('active');
-  });
-</script>
+</div>
 
+<script src="burger.js"></script>
+</main>
+  
 </body>
 </html>

@@ -86,8 +86,65 @@ main h2 {
   aspect-ratio: 9 / 16;
 }
 
+/* Стили для бургер-меню */
+.burger {
+  display: none; /* скрываем по умолчанию */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Анимация для активного состояния бургера */
+.burger.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
 /* ===== 📱 Мобильная адаптация ===== */
 @media (max-width: 768px) {
+  nav {
+    display: none; /* скрываем навигацию по умолчанию */
+    flex-direction: column;
+    background-color: black;
+    position: absolute;
+    top: 70px; /* чуть ниже header */
+    right: 20px;
+    width: 200px;
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  nav.active {
+    display: flex; /* показываем навигацию при активном классе */
+  }
+
+  nav a {
+    margin: 10px 0;
+  }
+
+  .burger {
+    display: flex; /* показываем бургер на мобильных */
+  }
+
   .horizontal,
   .vertical {
     width: 100%;
@@ -104,116 +161,4 @@ main h2 {
     flex-direction: column;
     align-items: center;
   }
-}
-
-/* Бургер-иконка */
-.burger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.burger div {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  transition: 0.3s;
-}
-
-/* Бургер-меню */
-#burger-menu {
-  cursor: pointer;
-  height: 27px;
-  width: 27px;
-  margin: 20px;
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1001;
-}
-
-#burger-menu span,
-#burger-menu span:before,
-#burger-menu span:after {
-  background: #fff;
-  display: block;
-  height: 2px;
-  position: absolute;
-  transition: 0.3s ease-in-out;
-  width: 27px;
-}
-
-#burger-menu span:before,
-#burger-menu span:after {
-  content: '';
-}
-
-#burger-menu span:before {
-  top: -10px;
-  left: 0;
-}
-
-#burger-menu span {
-  top: 13px;
-  right: 0;
-}
-
-#burger-menu span:after {
-  top: 10px;
-  left: 0;
-}
-
-#burger-menu.close span:before {
-  top: 0;
-  transform: rotate(90deg);
-}
-
-#burger-menu.close span {
-  transform: rotate(-45deg);
-}
-
-#burger-menu.close span:after {
-  top: 0;
-  transform: rotate(90deg);
-  opacity: 0;
-  width: 0;
-}
-
-/* Меню */
-#menu {
-  z-index: 1000;
-  width: 100%;
-  height: 0;
-  visibility: hidden;
-  opacity: 0;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.9);
-  transition: all 0.3s ease-in-out;
-  text-align: center;
-  padding-top: 0;
-}
-
-#menu.overlay {
-  height: 100%;
-  visibility: visible;
-  opacity: 1;
-  padding-top: 100px;
-}
-
-#menu ul {
-  padding: 0;
-}
-
-#menu li {
-  list-style: none;
-  margin: 20px 0;
-}
-
-#menu a {
-  color: white;
-  font-size: 28px;
-  text-decoration: none;
 }

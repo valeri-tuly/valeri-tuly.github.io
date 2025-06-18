@@ -47,45 +47,36 @@ main h1 {
   text-align: center;
 }
 
-.gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
-  padding: 20px;
-}
-
-/* Фиксируем ширину контейнера первой строки */
 .horizontal-row {
   display: flex;
   gap: 20px;
   justify-content: center;
-  max-width: 1140px; /* 2 * 560 + 20 */
+  max-width: 1140px;
   width: 100%;
+  flex-wrap: nowrap; /* Запретить перенос */
 }
 
-/* Горизонтальные видео */
 .horizontal {
-  flex: 0 0 560px;
+  flex: 0 0 560px; /* фиксированная ширина */
   height: 315px;
   aspect-ratio: 16 / 9;
+  max-width: none; /* чтобы max-width: 100% не мешал */
 }
 
-/* Вторая строка с вертикальными видео */
 .vertical-row {
   display: flex;
   gap: 20px;
   justify-content: center;
-  max-width: 1140px; /* Такая же ширина, как у horizontal-row */
+  max-width: 1140px;
   width: 100%;
+  flex-wrap: nowrap; /* тоже запретим перенос */
 }
 
-/* Вертикальные видео — подгоняем ширину */
 .vertical {
-  flex: 0 0 calc((1140px - 40px) / 3); /* 3 видео, 2 gaps по 20px = 40px */
+  flex: 0 0 calc((1140px - 40px) / 3);
   height: 570px;
   aspect-ratio: 9 / 16;
-  max-width: 100%;
+  max-width: none;
 }
 
 

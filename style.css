@@ -131,6 +131,7 @@ main h2 {
     border: 1px solid #444;
     padding: 10px;
     border-radius: 5px;
+    z-index: 999;
   }
 
   nav.active {

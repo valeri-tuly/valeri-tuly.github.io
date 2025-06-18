@@ -146,21 +146,18 @@ main h1 {
     display: flex !important; /* показываем бургер на мобильных */
   }
 
-  .horizontal,
-  .vertical {
-    width: 100%;
-    height: auto;
-  }
-
-  .gallery {
-    padding: 10px;
-    gap: 20px;
-  }
-
-  .vertical-row,
-  .horizontal-row {
+  .horizontal-row,
+  .vertical-row {
+    max-width: 100%;
     flex-direction: column;
+    gap: 20px;
     align-items: center;
+  }
+
+  .horizontal, .vertical {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: auto !important;
   }
 
 h1 {

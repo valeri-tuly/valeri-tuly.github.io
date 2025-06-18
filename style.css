@@ -150,6 +150,8 @@ main h1 {
 .vertical-photo-row .photo {
   width: calc(33.333% - 13.333px);
 }
+
+/* ===== Секция about ===== */
 .about-section {
   padding: 40px 20px;
   background-color: black;
@@ -164,21 +166,15 @@ main h1 {
   max-width: 1000px;
   width: 100%;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Позволяет переносить колонки */
 }
 
-/* Обеспечить, чтобы текст и фото занимали примерно по половине (или подстраиваться) */
 .about-text, .about-photo {
-  flex: 1 1 45%; /* примерно 2 колонки с отступами */
-  min-width: 280px; /* чтобы не слишком уж сжималось */
+  flex: 1 1 45%; /* примерно две колонки по 45% ширины */
+  min-width: 280px; /* минимальная ширина, чтобы не сжималось слишком */
   box-sizing: border-box;
 }
 
-/* Если внутри .about-text есть .social-links, ограничим его ширину */
-.about-text .social-links {
-  max-width: 100%;
-  flex-wrap: wrap;
-}
 .about-text h2 {
   font-size: 28px;
   margin-bottom: 15px;
@@ -191,7 +187,6 @@ main h1 {
 }
 
 .about-photo {
-  flex: 1 1 300px;
   display: flex;
   justify-content: center;
 }
@@ -203,11 +198,12 @@ main h1 {
   object-fit: cover;
 }
 
-/* ====== Стили для социальных ссылок ====== */
+/* ===== Социальные ссылки ===== */
 .social-links {
   display: flex;
   gap: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  flex-wrap: wrap; /* чтобы переносились при необходимости */
 }
 
 .social-links a {
@@ -232,7 +228,7 @@ main h1 {
   outline: none;
 }
 
-/* Иконки перед ссылками через emoji */
+/* Иконки эмодзи перед ссылками */
 .social-links a[href^="mailto"]::before {
   content: "📧";
   margin-right: 8px;
@@ -253,7 +249,7 @@ main h1 {
   margin-right: 8px;
 }
 
-/* ====== Адаптив ====== */
+/* ===== Адаптив ===== */
 @media (max-width: 768px) {
   header {
     padding: 10px 20px;
@@ -342,6 +338,11 @@ main h1 {
     text-align: center;
   }
 
+  .about-text, .about-photo {
+    flex: 1 1 100%;
+    min-width: auto;
+  }
+
   .about-photo {
     margin-top: 20px;
   }
@@ -357,3 +358,4 @@ main h1 {
     padding: 12px 20px;
   }
 }
+

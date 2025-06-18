@@ -117,12 +117,13 @@ main h1 {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-photo-gallery {
+.photo-gallery {
   display: flex;
   flex-direction: column;
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .photo-row {
@@ -131,22 +132,29 @@ photo-gallery {
   justify-content: center;
 }
 
-.photo-row img.photo {
+/* Общие стили фото */
+.photo {
+  display: block;
   object-fit: cover;
   width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
-.horizontal-photo-row img.horizontal {
+/* Горизонтальные фото — два в ряд */
+.horizontal-photo-row .photo {
   aspect-ratio: 16 / 9;
-  max-width: 48%;
+  flex: 1;
 }
 
-.vertical-photo-row img.vertical {
+/* Вертикальные фото — три в ряд */
+.vertical-photo-row .photo {
   aspect-ratio: 3 / 4;
-  max-width: 32%;
+  flex: 1;
+}
+
+/* Чтобы при 3 фото в ряду не было переполнения */
+.vertical-photo-row {
+  flex-wrap: nowrap;
 }
 
 @media (max-width: 768px) {

@@ -121,30 +121,99 @@ main h2 {
   transition: 0.3s;
 }
 
-/* Показывать бургер на мобилках */
-@media (max-width: 768px) {
-  nav.nav-links {
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: black;
-    flex-direction: column;
-    width: 100%;
-    display: none;
-    text-align: center;
-    padding: 10px 0;
-  }
+/* Бургер-меню */
+#burger-menu {
+  cursor: pointer;
+  height: 27px;
+  width: 27px;
+  margin: 20px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+}
 
-  nav.nav-links a {
-    padding: 10px 0;
-    display: block;
-  }
+#burger-menu span,
+#burger-menu span:before,
+#burger-menu span:after {
+  background: #fff;
+  display: block;
+  height: 2px;
+  position: absolute;
+  transition: 0.3s ease-in-out;
+  width: 27px;
+}
 
-  .burger {
-    display: flex;
-  }
+#burger-menu span:before,
+#burger-menu span:after {
+  content: '';
+}
 
-  nav.nav-links.active {
-    display: flex;
-  }
+#burger-menu span:before {
+  top: -10px;
+  left: 0;
+}
+
+#burger-menu span {
+  top: 13px;
+  right: 0;
+}
+
+#burger-menu span:after {
+  top: 10px;
+  left: 0;
+}
+
+#burger-menu.close span:before {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#burger-menu.close span {
+  transform: rotate(-45deg);
+}
+
+#burger-menu.close span:after {
+  top: 0;
+  transform: rotate(90deg);
+  opacity: 0;
+  width: 0;
+}
+
+/* Меню */
+#menu {
+  z-index: 1000;
+  width: 100%;
+  height: 0;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.9);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  padding-top: 0;
+}
+
+#menu.overlay {
+  height: 100%;
+  visibility: visible;
+  opacity: 1;
+  padding-top: 100px;
+}
+
+#menu ul {
+  padding: 0;
+}
+
+#menu li {
+  list-style: none;
+  margin: 20px 0;
+}
+
+#menu a {
+  color: white;
+  font-size: 28px;
+  text-decoration: none;
 }

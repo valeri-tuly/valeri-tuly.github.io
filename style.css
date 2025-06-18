@@ -55,5 +55,8 @@ h1 {
 .gallery .vertical {
   width: 315px;
   height: 560px;
+  aspect-ratio: 9 / 16;
   border-radius: 10px;
+  display: block;
 }
+

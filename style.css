@@ -121,50 +121,35 @@ main h1 {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  align-items: center; /* Центрирует все строки */
 }
 
+/* Одинаковая ширина для всех строк */
 .photo-row {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
-  justify-content: center;
-}
-
-/* Общие стили фото */
-.photo-gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center; /* Центруем галерею */
-}
-
-/* Устанавливаем одинаковую ширину строк */
-.photo-row {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  max-width: 1000px; /* одинаковая ширина */
   width: 100%;
+  max-width: 1000px; /* зафиксированная ширина */
 }
 
-/* Фото без сжатия, делят пространство */
-.photo-row .photo {
-  width: 100%;
+/* Общее для всех фото */
+.photo {
+  display: block;
   height: auto;
   border-radius: 10px;
-  display: block;
+  width: 100%;
 }
 
-/* 2 фото в первой строке */
+/* Делим пространство между фото */
+/* 2 фото → 50% - половина от gap */
 .horizontal-photo-row .photo {
-  flex: 1;
+  width: calc(50% - 10px);
 }
 
-/* 3 фото во второй строке */
+/* 3 фото → треть ширины строки */
 .vertical-photo-row .photo {
-  flex: 1;
+  width: calc(33.333% - 13.333px);
 }
 
 @media (max-width: 768px) {

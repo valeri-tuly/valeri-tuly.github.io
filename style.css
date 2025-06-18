@@ -171,3 +171,8 @@ main h2 {
     align-items: center;
   }
 }
+
+h1 {
+  text-align: center;
+  margin-top: 20px; /* можно подстроить отступ сверху */
+}

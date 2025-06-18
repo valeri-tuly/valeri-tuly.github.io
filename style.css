@@ -113,11 +113,15 @@ main h1 {
 }
 
 @media (max-width: 768px) {
+  header {
+    padding: 10px 20px;
+  }
+
   nav {
     flex-direction: column;
     background-color: black;
     position: absolute;
-    top: 60px; /* чуть ниже header */
+    top: 60px;
     right: 20px;
     width: 200px;
     border: 1px solid #444;
@@ -125,7 +129,6 @@ main h1 {
     border-radius: 5px;
     z-index: 10000;
 
-    /* анимация появления */
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -134,38 +137,45 @@ main h1 {
   }
 
   nav.active {
-    max-height: 500px; /* достаточно, чтобы показать все ссылки */
+    max-height: 500px;
     opacity: 1;
   }
 
   nav a {
     margin: 10px 0;
+    font-size: 18px;
+    padding: 8px;
   }
 
   .burger {
-    display: flex !important; /* показываем бургер на мобильных */
+    display: flex !important;
   }
 
+  /* Видео */
   .horizontal-row,
   .vertical-row {
     max-width: 100%;
     flex-direction: column;
     gap: 20px;
     align-items: center;
-
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 0 15px;
   }
 
-  .horizontal, .vertical {
+  .horizontal,
+  .vertical {
     width: 100% !important;
     height: auto !important;
     aspect-ratio: auto !important;
+    max-height: 300px; /* ограничим максимальную высоту для мобильных */
   }
 
-h1 {
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  display: block; /* на всякий случай */
+  main {
+    padding: 20px 10px;
+    max-width: 100%;
+  }
+
+  main h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
 }

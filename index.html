@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Videography - Rec</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    .logo {
+      font-size: 24px;
+    }
+
+    .logo span {
+      color: red;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 30px;
+      text-decoration: none;
+      font-weight: 300;
+    }
+
+    nav a.active {
+      font-weight: bold;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 48px;
+      margin: 40px 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto 80px;
+    }
+
+    .gallery img {
+      width: 100%;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo"><span>.</span>Rec<br><small>Valeri Tulchinskaia</small></div>
+    <nav>
+      <a href="#" class="active">VIDEOGRAPHY</a>
+      <a href="#">PHOTOGRAPHY</a>
+      <a href="#">GRAPHIC DESIGN</a>
+      <a href="#">ABOUT</a>
+    </nav>
+  </header>
+
+  <h1>Videography</h1>
+
+  <div class="gallery">
+    <img src="img1.jpg" alt="Artwork 1">
+    <img src="img2.jpg" alt="Artwork 2">
+    <img src="img3.jpg" alt="Artwork 3">
+    <img src="img4.jpg" alt="Artwork 4">
+    <img src="img5.jpg" alt="Artwork 5">
+    <img src="img6.jpg" alt="Artwork 6">
+    <img src="img7.jpg" alt="Artwork 7">
+    <img src="img8.jpg" alt="Artwork 8">
+  </div>
+
+</body>
+</html>

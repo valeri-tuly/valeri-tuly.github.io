@@ -170,9 +170,9 @@ main h2 {
     flex-direction: column;
     align-items: center;
   }
-}
 
 h1 {
+  width: 100%;
   text-align: center;
-  margin-top: 20px; /* можно подстроить отступ сверху */
+  margin: 20px 0;
 }

@@ -152,6 +152,9 @@ main h1 {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   .horizontal, .vertical {

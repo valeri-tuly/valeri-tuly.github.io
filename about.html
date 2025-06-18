@@ -2,46 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Photography - Rec</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Videography - Rec</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header>
-    <div class="logo">
-  <img src="logo.png" alt="Logo" />
-    </div>
-   <nav id="navbar" class="nav-links">
-    <a href="#" class="active">VIDEOGRAPHY</a>
+  <div class="logo">
+    <img src="photos/logo.png" alt="Logo" />
+  </div>
+  
+  <nav id="navbar" class="nav-links">
+    <a href="index.html">VIDEOGRAPHY</a>
     <a href="photography.html">PHOTOGRAPHY</a>
     <a href="graphic-design.html">GRAPHIC DESIGN</a>
-    <a href="about.html">ABOUT</a>
+    <a href="about.html" class="active">ABOUT</a>
   </nav>
 
-  <div class="burger" id="burger">
+  <div class="burger" id="burger" aria-label="Toggle menu" role="button" tabindex="0">
     <div></div>
     <div></div>
     <div></div>
   </div>
-  </header>
-
-  <h1>Photography</h1>
-
-  <div class="gallery">
-    <!-- Здесь размести фото для этого раздела -->
-    <img src="photo1.jpg" alt="Photo 1">
-    <img src="photo2.jpg" alt="Photo 2">
-    <!-- и так далее -->
+</header>
+<main>
+  <h1>About</h1>
+  <div class="about-section">
+  <div class="about-content">
+    <div class="about-text">
+      <h2>Valeri tulchinskaia</h2>
+      <p>
+        is a videographer & visual storyteller  who creates videos that help any brand tell its story — from bike shops to big factories. She focuses on capturing what makes each business unique, through warm, thoughtful, and beautiful visuals.
+      </p>
+      <div class="social-links">
+        <a href="https://t.me/your_username" target="_blank">Telegram</a>
+        <a href="https://github.com/your_username" target="_blank">GitHub</a>
+        <a href="cv/Valeri-Tulchinskaia-CV.pdf" download>📄 Download CV</a>
+      </div>
+    </div>
+    <div class="about-photo">
+      <img src="photos/30.webp" alt="pgoto" />
+    </div>
   </div>
-
-  <script>
-  const burger = document.getElementById('burger');
-  const navbar = document.getElementById('navbar');
-
-  burger.addEventListener('click', () => {
-    navbar.classList.toggle('active');
-  });
-</script>
-
+</div>
+<script src="burger.js"></script>
+</main>
+  
 </body>
 </html>

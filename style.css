@@ -54,6 +54,7 @@ main h1 {
   max-width: 1140px;
   width: 100%;
   flex-wrap: nowrap; /* Запретить перенос */
+  margin-bottom: 30px; /* или любой нужный тебе отступ */
 }
 
 .horizontal {
@@ -70,6 +71,7 @@ main h1 {
   max-width: 1140px;
   width: 100%;
   flex-wrap: nowrap; /* тоже запретим перенос */
+  margin-bottom: 30px; /* или любой нужный тебе отступ */
 }
 
 .vertical {

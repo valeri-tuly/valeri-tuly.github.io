@@ -151,7 +151,6 @@ main h1 {
   width: calc(33.333% - 13.333px);
 }
 
-/* ===== Секция about ===== */
 .about-section {
   padding: 40px 20px;
   background-color: black;
@@ -166,13 +165,20 @@ main h1 {
   max-width: 1000px;
   width: 100%;
   align-items: center;
-  flex-wrap: wrap; /* Позволяет переносить колонки */
+  flex-wrap: wrap;
 }
 
+/* Обеспечить, чтобы текст и фото занимали примерно по половине (или подстраиваться) */
 .about-text, .about-photo {
-  flex: 1 1 45%; /* примерно две колонки по 45% ширины */
-  min-width: 280px; /* минимальная ширина, чтобы не сжималось слишком */
+  flex: 1 1 45%; /* примерно 2 колонки с отступами */
+  min-width: 280px; /* чтобы не слишком уж сжималось */
   box-sizing: border-box;
+}
+
+/* Если внутри .about-text есть .social-links, ограничим его ширину */
+.about-text .social-links {
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 
 .about-text h2 {
@@ -187,6 +193,7 @@ main h1 {
 }
 
 .about-photo {
+  flex: 1 1 300px;
   display: flex;
   justify-content: center;
 }
@@ -198,12 +205,11 @@ main h1 {
   object-fit: cover;
 }
 
-/* ===== Социальные ссылки ===== */
+/* ====== Стили для социальных ссылок ====== */
 .social-links {
   display: flex;
   gap: 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  flex-wrap: wrap; /* чтобы переносились при необходимости */
 }
 
 .social-links a {
@@ -228,7 +234,7 @@ main h1 {
   outline: none;
 }
 
-/* Иконки эмодзи перед ссылками */
+/* Иконки перед ссылками через emoji */
 .social-links a[href^="mailto"]::before {
   content: "📧";
   margin-right: 8px;
@@ -249,7 +255,7 @@ main h1 {
   margin-right: 8px;
 }
 
-/* ===== Адаптив ===== */
+/* ====== Адаптив ====== */
 @media (max-width: 768px) {
   header {
     padding: 10px 20px;
@@ -333,9 +339,11 @@ main h1 {
     margin-bottom: 15px;
   }
 
+  /* ====== Внесены правки для удобства about на мобилках ====== */
   .about-content {
     flex-direction: column;
     text-align: center;
+    padding: 0 15px;
   }
 
   .about-text, .about-photo {
@@ -343,19 +351,42 @@ main h1 {
     min-width: auto;
   }
 
+  .about-text h2 {
+    font-size: 24px;
+  }
+
+  .about-text p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    padding: 0 10px;
+  }
+
   .about-photo {
     margin-top: 20px;
+    justify-content: center;
+  }
+
+  .about-photo img {
+    max-width: 90vw;
+    height: auto;
+    border-radius: 12px;
   }
 
   .social-links {
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
+    padding: 0 10px;
   }
 
   .social-links a {
     display: block;
-    margin: 8px 0;
-    padding: 12px 20px;
+    margin: 0 auto;
+    max-width: 300px;
+    padding: 14px 24px;
+    font-size: 18px;
+    border-radius: 10px;
+    box-shadow: 0 6px 25px rgba(37, 117, 252, 0.6);
+    user-select: auto;
   }
 }
-

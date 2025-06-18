@@ -133,28 +133,34 @@ main h1 {
 }
 
 /* Общие стили фото */
-.photo {
-  display: block;
-  object-fit: cover;
-  width: 100%;
-  border-radius: 10px;
+.photo-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.photo-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* Горизонтальные фото — два в ряд */
 .horizontal-photo-row .photo {
-  aspect-ratio: 16 / 9;
-  flex: 1;
+  max-width: calc(50% - 10px); /* два фото с отступом */
+  height: auto;
+  border-radius: 10px;
 }
 
 /* Вертикальные фото — три в ряд */
 .vertical-photo-row .photo {
-  aspect-ratio: 3 / 4;
-  flex: 1;
-}
-
-/* Чтобы при 3 фото в ряду не было переполнения */
-.vertical-photo-row {
-  flex-wrap: nowrap;
+  max-width: calc(33.33% - 13.33px); /* три фото с отступами */
+  height: auto;
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {
@@ -228,13 +234,9 @@ main h1 {
     font-size: 28px;
     margin-bottom: 15px;
   }
-  .horizontal-photo-row img.horizontal,
-  .vertical-photo-row img.vertical {
+  
+.horizontal-photo-row .photo,
+  .vertical-photo-row .photo {
     max-width: 100%;
-  }
-
-  .photo-row {
-    flex-direction: column;
-    align-items: center;
   }
 }

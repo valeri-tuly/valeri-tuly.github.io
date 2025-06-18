@@ -120,10 +120,8 @@ main h2 {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ===== 📱 Мобильная адаптация ===== */
 @media (max-width: 768px) {
   nav {
-    display: none; /* скрываем навигацию по умолчанию */
     flex-direction: column;
     background-color: black;
     position: absolute;
@@ -134,10 +132,18 @@ main h2 {
     padding: 10px;
     border-radius: 5px;
     z-index: 10000;
+
+    /* анимация появления */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    display: flex;
   }
 
   nav.active {
-    display: flex; /* показываем навигацию при активном классе */
+    max-height: 500px; /* достаточно, чтобы показать все ссылки */
+    opacity: 1;
   }
 
   nav a {

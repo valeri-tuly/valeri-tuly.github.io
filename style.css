@@ -172,7 +172,8 @@ main h2 {
   }
 
 h1 {
-  text-align: center !important;
-  margin: 20px 0 !important;
-  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: block; /* на всякий случай */
 }

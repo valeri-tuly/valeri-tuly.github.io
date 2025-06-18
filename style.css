@@ -213,6 +213,17 @@ main h1 {
   .vertical-row:not(:last-child) {
     margin-bottom: 20px; /* чуть поменьше отступ на мобильных */
   }
+  
+    .photo-row {
+    flex-direction: column;
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .photo {
+    width: 100% !important;
+    max-width: 100%;
+  }
 
   main {
     padding: 20px 10px;
@@ -224,15 +235,4 @@ main h1 {
     margin-bottom: 15px;
   }
   
-  .photo-row {
-    flex-direction: column;
-    gap: 15px;
-    max-width: 100%;
-    width: 100%;
-  }
-
-  .photo {
-    width: 100% !important;
-    max-width: 100%;
-  }
 }

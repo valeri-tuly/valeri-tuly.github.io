@@ -127,10 +127,10 @@ main h1 {
 /* Одинаковая ширина для всех строк */
 .photo-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* заменили с space-between */
   gap: 20px;
   width: 100%;
-  max-width: 1000px; /* зафиксированная ширина */
+  max-width: 1000px;
 }
 
 /* Общее для всех фото */

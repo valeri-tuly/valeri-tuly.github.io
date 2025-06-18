@@ -2,45 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Photography - Rec</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Videography - Rec</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <header>
-    <div class="logo">
-  <img src="logo.png" alt="Logo" />
-    </div>
-    <nav id="navbar" class="nav-links">
-    <a href="#" class="active">VIDEOGRAPHY</a>
+  <div class="logo">
+    <img src="photos/logo.png" alt="Logo" />
+  </div>
+  
+  <nav id="navbar" class="nav-links">
+    <a href="index.html">VIDEOGRAPHY</a>
     <a href="photography.html">PHOTOGRAPHY</a>
-    <a href="graphic-design.html">GRAPHIC DESIGN</a>
+    <a href="graphic-design.html" class="active">GRAPHIC DESIGN</a>
     <a href="about.html">ABOUT</a>
   </nav>
 
-  <div class="burger" id="burger">
+  <div class="burger" id="burger" aria-label="Toggle menu" role="button" tabindex="0">
     <div></div>
     <div></div>
     <div></div>
   </div>
-  </header>
+</header>
+<main>
+  <h1>Graphic Design</h1>
 
-  <h1>Photography</h1>
-
-  <div class="gallery">
-    <!-- Здесь размести фото для этого раздела -->
-    <img src="photo1.jpg" alt="Photo 1">
-    <img src="photo2.jpg" alt="Photo 2">
-    <!-- и так далее -->
+<div class="photo-gallery">
+  
+  <div class="photo-row vertical-photo-row">
+    <img src="photos/16.webp" alt="Photo 1" class="photo" />
+    <img src="photos/17.webp" alt="Photo 2" class="photo" />
+    <img src="photos/18.webp" alt="Photo 3" class="photo" />
   </div>
 
-  <script>
-  const burger = document.getElementById('burger');
-  const navbar = document.getElementById('navbar');
+  <div class="photo-row vertical-photo-row">
+    <img src="photos/19.webp" alt="Photo 4" class="photo" />
+    <img src="photos/20.webp" alt="Photo 5" class="photo" />
+    <img src="photos/21.webp" alt="Photo 6" class="photo" />
+  </div>
 
-  burger.addEventListener('click', () => {
-    navbar.classList.toggle('active');
-  });
-</script>
+  <div class="photo-row vertical-photo-row">
+    <img src="photos/22.webp" alt="Photo 7" class="photo" />
+    <img src="photos/23.webp" alt="Photo 8" class="photo" />
+    <img src="photos/24.webp" alt="Photo 9" class="photo" />
+  </div>
+  
+</div>
+
+<script src="burger.js"></script>
+</main>
+  
 </body>
 </html>

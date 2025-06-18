@@ -117,6 +117,38 @@ main h1 {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+photo-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.photo-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.photo-row img.photo {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+.horizontal-photo-row img.horizontal {
+  aspect-ratio: 16 / 9;
+  max-width: 48%;
+}
+
+.vertical-photo-row img.vertical {
+  aspect-ratio: 3 / 4;
+  max-width: 32%;
+}
+
 @media (max-width: 768px) {
   header {
     padding: 10px 20px;
@@ -187,5 +219,14 @@ main h1 {
   main h1 {
     font-size: 28px;
     margin-bottom: 15px;
+  }
+  .horizontal-photo-row img.horizontal,
+  .vertical-photo-row img.vertical {
+    max-width: 100%;
+  }
+
+  .photo-row {
+    flex-direction: column;
+    align-items: center;
   }
 }

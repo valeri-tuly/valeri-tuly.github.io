@@ -11,6 +11,8 @@ header {
   align-items: center;
   padding: 20px 40px;
   border-bottom: 1px solid #444;
+  position: relative; /* Чтобы позиционировать навигацию и бургер относительно header */
+  z-index: 10000; /* Чтобы бургер и меню были сверху */
 }
 
 header h1 {
@@ -94,7 +96,7 @@ main h2 {
   width: 25px;
   height: 25px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 10001;
 }
 
 .burger div {
@@ -125,13 +127,13 @@ main h2 {
     flex-direction: column;
     background-color: black;
     position: absolute;
-    top: 70px; /* чуть ниже header */
+    top: 60px; /* чуть ниже header */
     right: 20px;
     width: 200px;
     border: 1px solid #444;
     padding: 10px;
     border-radius: 5px;
-    z-index: 999;
+    z-index: 10000;
   }
 
   nav.active {
@@ -143,7 +145,7 @@ main h2 {
   }
 
   .burger {
-    display: flex; /* показываем бургер на мобильных */
+    display: flex !important; /* показываем бургер на мобильных */
   }
 
   .horizontal,

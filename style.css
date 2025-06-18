@@ -137,30 +137,34 @@ main h1 {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+  align-items: center; /* Центруем галерею */
 }
 
+/* Устанавливаем одинаковую ширину строк */
 .photo-row {
   display: flex;
   gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
+  max-width: 1000px; /* одинаковая ширина */
+  width: 100%;
 }
 
-/* Горизонтальные фото — два в ряд */
+/* Фото без сжатия, делят пространство */
+.photo-row .photo {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* 2 фото в первой строке */
 .horizontal-photo-row .photo {
-  max-width: calc(50% - 10px); /* два фото с отступом */
-  height: auto;
-  border-radius: 10px;
+  flex: 1;
 }
 
-/* Вертикальные фото — три в ряд */
+/* 3 фото во второй строке */
 .vertical-photo-row .photo {
-  max-width: calc(33.33% - 13.33px); /* три фото с отступами */
-  height: auto;
-  border-radius: 10px;
+  flex: 1;
 }
 
 @media (max-width: 768px) {

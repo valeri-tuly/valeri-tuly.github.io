@@ -105,3 +105,46 @@ main h2 {
     align-items: center;
   }
 }
+
+/* Бургер-иконка */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+/* Показывать бургер на мобилках */
+@media (max-width: 768px) {
+  nav.nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: black;
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    text-align: center;
+    padding: 10px 0;
+  }
+
+  nav.nav-links a {
+    padding: 10px 0;
+    display: block;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  nav.nav-links.active {
+    display: flex;
+  }
+}

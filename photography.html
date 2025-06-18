@@ -11,12 +11,18 @@
     <div class="logo">
   <img src="logo.png" alt="Logo" />
     </div>
-    <nav>
-      <a href="index.html">VIDEOGRAPHY</a>
-      <a href="photography.html" class="active">PHOTOGRAPHY</a>
-      <a href="graphic-design.html">GRAPHIC DESIGN</a>
-      <a href="about.html">ABOUT</a>
-    </nav>
+    <nav id="navbar" class="nav-links">
+    <a href="#" class="active">VIDEOGRAPHY</a>
+    <a href="photography.html">PHOTOGRAPHY</a>
+    <a href="graphic-design.html">GRAPHIC DESIGN</a>
+    <a href="about.html">ABOUT</a>
+  </nav>
+
+  <div class="burger" id="burger">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
   </header>
 
   <h1>Photography</h1>
@@ -27,6 +33,15 @@
     <img src="photo2.jpg" alt="Photo 2">
     <!-- и так далее -->
   </div>
+
+  <script>
+  const burger = document.getElementById('burger');
+  const navbar = document.getElementById('navbar');
+
+  burger.addEventListener('click', () => {
+    navbar.classList.toggle('active');
+  });
+</script>
 
 </body>
 </html>

@@ -84,7 +84,6 @@ main h1 {
   margin-bottom: 30px; /* Можно изменить отступ под себя */
 }
 
-
 /* Стили для бургер-меню */
 .burger {
   display: none; /* скрываем по умолчанию */
@@ -183,32 +182,6 @@ main h1 {
   margin-bottom: 20px;
 }
 
-  .social-links {
-    display: flex;
-    gap: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  .social-links a {
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 16px;
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
-    transition: background 0.3s ease, transform 0.2s ease;
-  }
-
-  .social-links a:hover,
-  .social-links a:focus {
-    background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(37, 117, 252, 0.6);
-  }
-
 .about-photo {
   flex: 1 1 300px;
   display: flex;
@@ -222,6 +195,57 @@ main h1 {
   object-fit: cover;
 }
 
+/* ====== Стили для социальных ссылок ====== */
+.social-links {
+  display: flex;
+  gap: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
+  transition: background 0.3s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+.social-links a:hover,
+.social-links a:focus {
+  background: linear-gradient(135deg, #2575fc 0%, #6a11cb 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(37, 117, 252, 0.6);
+  outline: none;
+}
+
+/* Иконки перед ссылками через emoji */
+.social-links a[href^="mailto"]::before {
+  content: "📧";
+  margin-right: 8px;
+}
+
+.social-links a[href*="t.me"]::before {
+  content: "✈️";
+  margin-right: 8px;
+}
+
+.social-links a[href*="linkedin.com"]::before {
+  content: "💼";
+  margin-right: 8px;
+}
+
+.social-links a[download]::before {
+  content: "📄";
+  margin-right: 8px;
+}
+
+/* ====== Адаптив ====== */
 @media (max-width: 768px) {
   header {
     padding: 10px 20px;
@@ -283,8 +307,8 @@ main h1 {
   .vertical-row:not(:last-child) {
     margin-bottom: 20px; /* чуть поменьше отступ на мобильных */
   }
-  
-    .photo-row {
+
+  .photo-row {
     flex-direction: column;
     gap: 15px;
     max-width: 100%;
@@ -314,9 +338,14 @@ main h1 {
     margin-top: 20px;
   }
 
+  .social-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
   .social-links a {
     display: block;
     margin: 8px 0;
+    padding: 12px 20px;
   }
-  
 }

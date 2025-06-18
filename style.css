@@ -1,62 +1,65 @@
+/* Основной стиль */
 body {
-  background-color: black;
-  color: white;
   margin: 0;
-  font-family: 'Helvetica Neue', sans-serif;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-}
-
-.logo img {
-  height: 128px;
-  max-width: 100%;
-  display: block;
-}
-
-.logo span {
-  color: red;
-}
-
-nav a {
-  color: white;
-  margin-left: 30px;
-  text-decoration: none;
-  font-weight: 300;
-}
-
-nav a.active {
-  font-weight: bold;
-}
-
-h1 {
-  text-align: center;
-  font-size: 48px;
-  margin: 40px 0;
+  font-family: Arial, sans-serif;
 }
 
 .gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Горизонтальная строка видео */
+.horizontal-row {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
 }
 
-.gallery .horizontal {
+.horizontal {
   width: 560px;
   height: 315px;
-  border-radius: 10px;
+  max-width: 100%;
 }
 
-.gallery .vertical {
-  width: 315px;
-  height: 560px;
-  aspect-ratio: 9 / 16;
-  border-radius: 10px;
-  display: block;
+/* Сетка вертикальных видео */
+.vertical-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-items: center;
 }
 
+.vertical {
+  width: 320px;
+  height: 570px;
+  max-width: 100%;
+}
+
+/* ===== 📱 Мобильная адаптация ===== */
+@media (max-width: 768px) {
+  .horizontal {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .vertical {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 9 / 16;
+  }
+
+  .vertical-grid {
+    grid-template-columns: 1fr; /* По одному видео в ряд на узком экране */
+  }
+
+  .gallery {
+    padding: 10px;
+    gap: 20px;
+  }
+}

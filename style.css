@@ -42,6 +42,7 @@ main {
 }
 
 main h1 {
+  font-family: 'Playfair Display'
   font-size: 36px;
   margin-bottom: 20px;
   text-align: center;

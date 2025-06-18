@@ -47,46 +47,6 @@ main h1 {
   text-align: center;
 }
 
-/* ===== 🎥 Галерея видео ===== */
-/*
-.gallery {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
-  padding: 20px;
-}
-
-/* Горизонтальная строка видео */
-.horizontal-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.horizontal {
-  width: 560px;
-  height: 315px;
-  max-width: 100%;
-  aspect-ratio: 16 / 9;
-}
-
-/* Строка вертикальных видео (по 3 в ряд) */
-.vertical-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.vertical {
-  width: 320px;
-  height: 570px;
-  max-width: 100%;
-  aspect-ratio: 9 / 16;
-}
-*/
 .gallery {
   display: flex;
   flex-direction: column;
@@ -127,6 +87,7 @@ main h1 {
   aspect-ratio: 9 / 16;
   max-width: 100%;
 }
+
 
 /* Стили для бургер-меню */
 .burger {

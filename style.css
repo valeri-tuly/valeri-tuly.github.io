@@ -1,0 +1,57 @@
+body {
+  background-color: black;
+  color: white;
+  margin: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.logo {
+  font-size: 24px;
+}
+
+.logo span {
+  color: red;
+}
+
+nav a {
+  color: white;
+  margin-left: 30px;
+  text-decoration: none;
+  font-weight: 300;
+}
+
+nav a.active {
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  font-size: 48px;
+  margin: 40px 0;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto 80px;
+}
+
+.gallery img {
+  width: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}

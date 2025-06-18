@@ -224,8 +224,15 @@ main h1 {
     margin-bottom: 15px;
   }
   
-.horizontal-photo-row .photo,
-  .vertical-photo-row .photo {
+  .photo-row {
+    flex-direction: column;
+    gap: 15px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .photo {
+    width: 100% !important;
     max-width: 100%;
   }
 }

@@ -167,10 +167,18 @@ main h1 {
   flex-wrap: wrap;
 }
 
-.about-text {
-  flex: 1 1 300px;
+/* Обеспечить, чтобы текст и фото занимали примерно по половине (или подстраиваться) */
+.about-text, .about-photo {
+  flex: 1 1 45%; /* примерно 2 колонки с отступами */
+  min-width: 280px; /* чтобы не слишком уж сжималось */
+  box-sizing: border-box;
 }
 
+/* Если внутри .about-text есть .social-links, ограничим его ширину */
+.about-text .social-links {
+  max-width: 100%;
+  flex-wrap: wrap;
+}
 .about-text h2 {
   font-size: 28px;
   margin-bottom: 15px;
